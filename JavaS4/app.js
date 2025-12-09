@@ -1,12 +1,12 @@
-// vai ser um jogo sobreperdedores e ganhadores, se a pessoa clicar em "loser" ela perde se clicar em winner ela ganha, porém, irá haver outro jogo emque o vencedor tem que "apanhar"
+// vai ser um jogo sobreperdedores e ganhadores, se a pessoa escrever em "perdedor" ela perde se clicar em "vencedor" ela ganha, porém, irá haver outro jogo em que o vencedor tem que apanhar
 // o pássaro
 
 
 
 
-let jogo = prompt('Estás pronto para jogar o jogo mais dificil do mundo? sim/nao')
+let game = prompt('Estás pronto para jogar o jogo mais dificil do mundo? sim/nao')
 
-if (jogo === 'sim') {
+if (game === 'sim') {
     let escolha = prompt('És um vencedor ou um perdedor?')
 
     if (escolha === 'vencedor') {
@@ -16,3 +16,51 @@ if (jogo === 'sim') {
         close()
     }
 }
+
+let regras = prompt('queres aprender as regras do jogo? sim/não')
+
+let chance = Math.floor(Math.random() * 100) + 1
+alert(chance)
+let percentagem = 30
+
+let apanharpassaro = false
+
+
+
+
+if (regras === 'sim') {
+    alert('Neste jogo o teu objetivo é apanhar o passaro, simples, não é?')
+    alert('É, é só isso, apanha o passarinho')
+    let apanhar = prompt('Tenta apanhar o passaro')
+    while (!apanharpassaro) {
+        if (apanhar === 'apanhar') {
+            if (chance < percentagem) {
+                alert(`${chance}, ${percentagem}`)
+                alert('Boa, apanhaste o passaro!')
+
+                apanharpassaro = true
+            } else {
+                chance = Math.floor(Math.random()) * 100
+                alert('Não apanhaste o passaro')
+                apanhar = prompt('Tenta apanhar o passaro')
+            }
+        } else {
+            alert('palavra errada')
+            break
+        }
+
+
+    }
+
+} else if (regras === 'não') {
+    alert('É tarde para negar agora.')
+    alert('Neste jogo o teu objetivo é apanhar o passaro, simples, não é?')
+    alert('É, é só isso, apanha o passarinho')
+}
+
+
+
+
+
+
+
